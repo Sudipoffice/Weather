@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/Cloud.png" />
+    <style>
+         @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+         @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+        body{
+            /* background: #031d39; */
+            background-image: url("Background.jpg");
+            /* color: white; */
+            color: rgb(255, 255, 255);
+            font-family: "Karla", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #container{
+            width: 20%;
+            height: 60%;
+            border-radius: 20px;
+            /* background-image: linear-gradient(to bottom right,rgba(1, 241, 201, 0.867)50%, rgba(173, 113, 237, 0.566)); */
+            background: #38383882;
+            margin-top: 40px;
+        }
+        #search{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5%;
+        }
+
+        #input{
+            background-color: #ffffffa9;
+            height: 40px;
+            border: none;
+            border-radius: 20px;
+            margin: 6px;
+            width: 55%;
+            font-size: 12px;
+            color: grey;
+            padding-left: 15px;
+        }
+        #searchBtn, #currLocation{
+            background-color: #ffffffa9;
+            border: none;
+            border-radius: 40px;
+            height: 40px;
+            width: 40px;
+            margin: 4px;
+            cursor: pointer;
+            &:hover{
+                background-color: #ffffffd4;
+            }
+        }
+        .bi-search{
+            font-size: 10px;
+            cursor: pointer;
+        }
+        .bi-geo{
+            cursor: pointer;
+        }
+        #info{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+        }
+        #icon{
+            /* font-size: 120px; */
+            width: 120px;
+        }
+        #temp{
+            font-size: 60px;
+        }
+        #cityName{
+            font-size: 35px;
+        }
+        #minuteInfo{
+            display: flex;
+            flex-direction: row;
+            padding: 0% 10%;
+            column-gap: 10%;
+        }
+        #humidity, #windSpeed{
+            display: flex;
+            align-items: center;
+           
+        }
+        #humidity{
+            
+        }
+        #windSpeed{
+            
+        }
+        #humidityIcon,#wsIcon{
+            font-size: 20px;
+            margin: 10px;
+        }
+        #humidityContent,#wsContent{
+            font-size: 18px;
+        }
+        #humidityTitle, #wsTitle{
+            font-size: 12px;
+            transform: translateY(-15px);
+        }
+
+        /* MOBILE SCENE */
+        @media (min-width: 320px) and (max-width: 600px){
+            body{
+            background-repeat: no-repeat;
+            background-size: 140vh;
+            
+        }
+            #container{
+            width: 85%;
+            height: 90%;
+            border-radius: 20px;
+            background: #38383882;
+            margin-top: 90px;
+        }
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="search">
+            <input type="text" id="input"  placeholder="Search" autocomplete="off">
+            <button id="searchBtn"><i class="bi bi-search"></i></i></button>
+            <button id="currLocation"><i class="bi bi-geo"></i></button>
+        </div>
+        <div id="info">
+            <div id="iconContainer"></div>
+            <div id="weatherInfo"></div>
+            <div id="temp"></div>
+            <div id="cityName"></div>
+        </div>
+        <div id="minuteInfo">
+            <div id="humidity">
+                <div id="humidityIcon"><i class="bi bi-moisture"></i></div>
+                <div id="humidityContent">
+                    <p id="humidityInfo"></p>
+                    <p id="humidityTitle">Humidity</p>
+                </div>
+            </div>
+            <div id="windSpeed">
+                <div id="wsIcon"><i class="bi bi-wind"></i></div>
+                <div id="wsContent">
+                    <p id="wsInfo"></p>
+                    <p id="wsTitle">Wind Speed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="weather.js"></script>
+</html>
